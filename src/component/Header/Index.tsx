@@ -1,4 +1,4 @@
 export default function Index() {
 
-  return <h1>Olá mundo</h1>
+  return <header>Olá mundo</header>
 }
