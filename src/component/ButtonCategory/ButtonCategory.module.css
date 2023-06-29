@@ -9,4 +9,5 @@
 .ButtonCategory:hover{
   color: blue;
   border-color: blue;
+  cursor: pointer;
 }
