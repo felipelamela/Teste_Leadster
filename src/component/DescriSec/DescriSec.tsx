@@ -6,7 +6,7 @@ const DescriSec = () => {
     <section className={style.containerDescri}>
       <img className={style.imgDescri} src='img/comparativo_img_CTA.png' alt="" />
       <div className={style.containerTextDescri}>
-        <div>
+        <div className={style.TextDecri}>
           <h3 className={style.titleDescri}>Pronto para triplicar sua <strong>Geração de Leads?</strong></h3>
           <p className={style.paragrofoDescri}>Criação e ativação em<strong> 4 minutos</strong>.</p>
         </div>

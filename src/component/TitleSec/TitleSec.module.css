@@ -1,9 +1,36 @@
 .containerTitle {
-  max-width: 1200px;
+  padding: 6rem 2rem;
   margin: 0 auto;
   text-align: center;
+  background: #F0F8FF;
 }
 
-.textTitle{
-  
+.textTitle {
+  font-weight: 500;
+  font-size: .8rem;
+  text-transform: uppercase;
+  display: inline;
+  padding: .5rem 1.2rem;
+  text-align: center;
+  color: #0082FF;
+  border: solid 2px #0082FF;
+  border-radius: 20px 20px 20px 5px;
+}
+
+.titleSec {
+  padding: 1.3rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.titleSec span {
+  display: inline;
+  font-size: 4rem;
+  background-image: linear-gradient(45deg, #2c83fb, #1f76f0);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  line-height: 1;
 }

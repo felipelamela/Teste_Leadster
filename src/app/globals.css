@@ -1,3 +1,9 @@
+@import './reset.css';
+
+body {
+  color: #1C3C50;
+}
+
 body .buttonAtivo {
   background-color: #0082FF;
   border: none;
@@ -6,7 +12,7 @@ body .buttonAtivo {
   ;
 }
 
-:root .buttonAtivo:hover {
+.buttonAtivo:hover {
   color: #fff;
   cursor: pointer;
   border: solid 1px #0082FF;
