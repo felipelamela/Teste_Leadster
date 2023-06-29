@@ -2,8 +2,12 @@
   background-color: rgb(73, 152, 255);
   border: none;
   color: #fff;
+  border: solid 1px rgb(73, 152, 255);
+  ;
 }
-:root .buttonAtivo:hover{
+
+:root .buttonAtivo:hover {
   color: #fff;
   cursor: pointer;
+  border: solid 1px rgb(73, 152, 255);
 }

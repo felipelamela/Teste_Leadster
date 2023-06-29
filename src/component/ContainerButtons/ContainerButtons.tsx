@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ButtonCategory from "../ButtonCategory/ButtonCategory"
 
 const listaCategoria:string[] = [
@@ -11,11 +11,12 @@ const listaCategoria:string[] = [
 ]
 
 const ContainerButtons:React.FC = () => {
+  const [numeroBotao, setNumeroBotao] = React.useState<number>()
 
-  function handleClick(event:Event, index:number){
-    console.log(index)
-    console.log(event.target)
-  }
+  useEffect(()=>{
+    setNumeroBotao(0)
+  },[])
+
 
   return (
     <section>
@@ -23,7 +24,9 @@ const ContainerButtons:React.FC = () => {
         <ButtonCategory 
           key={index} 
           name={category}
+          setNumeroBotao={setNumeroBotao}
           numero={index}
+          estilo={numeroBotao ===index}
           
           />
       ))} 
