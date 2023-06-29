@@ -1,0 +1,12 @@
+.ButtonCategory{
+  background: #ffffff;
+  padding: .3rem 1.2rem;
+  border: none;
+  border: solid 1px #b6b5b5;
+  border-radius: 20px;
+}
+
+.ButtonCategory:hover{
+  color: blue;
+  border-color: blue;
+}
