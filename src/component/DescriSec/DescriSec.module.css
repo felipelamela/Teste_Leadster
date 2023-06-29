@@ -1,0 +1,52 @@
+.containerDescri {
+  margin: 0 auto;
+  max-width: 1200px;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.imgDescri {
+  max-width: 600px;
+}
+
+.containerTextDescri {}
+
+.titleDescri {
+  font-weight: 300;
+  font-size: 2.3rem;
+}
+
+.containerButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttonDescri {
+  font-size: 1.3rem;
+  border: none;
+  padding: .7rem 1.2rem;
+  border-radius: 2rem;
+  background: #0083FF;
+  color: #f5faff;
+  cursor: pointer;
+
+}
+
+.seloButtonDescri {
+  max-width: 130px;
+}
+
+.containerDetalheDescri {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.detalheDescri {
+  display: flex;
+  align-items: center;
+
+}

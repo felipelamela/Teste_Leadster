@@ -7,7 +7,7 @@
 }
 
 .ButtonCategory:hover{
-  color: blue;
-  border-color: blue;
+  color: #0082FF;
+  border-color: #0082FF;
   cursor: pointer;
 }

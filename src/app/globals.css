@@ -1,13 +1,13 @@
-:root .buttonAtivo {
-  background-color: rgb(73, 152, 255);
+body .buttonAtivo {
+  background-color: #0082FF;
   border: none;
   color: #fff;
-  border: solid 1px rgb(73, 152, 255);
+  border: solid 1px #0082FF;
   ;
 }
 
 :root .buttonAtivo:hover {
   color: #fff;
   cursor: pointer;
-  border: solid 1px rgb(73, 152, 255);
+  border: solid 1px #0082FF;
 }
