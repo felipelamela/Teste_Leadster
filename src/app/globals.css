@@ -12,7 +12,7 @@ body .buttonAtivo {
   ;
 }
 
-.buttonAtivo:hover {
+body .buttonAtivo:hover {
   color: #fff;
   cursor: pointer;
   border: solid 1px #0082FF;
