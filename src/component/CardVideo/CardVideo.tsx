@@ -4,7 +4,15 @@ import Image from 'next/image'
 import React from 'react'
 import style from './CardVideo.module.css'
 
-const CardVideo: React.FC = () => {
+interface VideoCard {
+  id: number,
+  titulo: string,
+  thumbnail: string
+}
+
+
+
+const CardVideo: React.FC<VideoCard> = ({ id, titulo, thumbnail }) => {
   const [ativaCard, setAtivaCard] = React.useState('desativado')
 
   function handleMouseEnter() {
@@ -23,7 +31,7 @@ const CardVideo: React.FC = () => {
       onMouseLeave={event => handleMouseOut()}
     >
       <Image
-        src="/img/thumbnail.png"
+        src={thumbnail}
         alt='decri'
         width={362}
         height={204}
@@ -31,7 +39,7 @@ const CardVideo: React.FC = () => {
 
       />
       <span className={`${ativaCard}`}>▶</span>
-      <p className={style.textCard}>Como aumentar sua Geração de Leads feat. Traktor</p>
+      <p className={style.textCard}>{titulo}</p>
     </div >
   )
 }
