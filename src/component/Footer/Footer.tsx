@@ -1,48 +1,112 @@
+import Link from "next/link"
+import FooterLinks from "../FooterLinks/FooterLinks"
+import style from "./Footer.module.css"
+
+interface objetoLink {
+  title: string,
+  link: string
+}
+
+interface objLink {
+  title: string,
+  links: objetoLink[]
+}
+
+
+const listaDeLinks: objLink[] = [
+  {
+    title: "Home",
+    links: [{
+      'title': 'Home',
+      'link': '/'
+    },
+
+    {
+      'title': 'Ferramenta',
+      'link': '/'
+    },
+    {
+      'title': 'Preços',
+      'link': '/'
+    },
+    {
+      'title': 'Contato',
+      'link': '/'
+    },]
+  },
+  {
+    title: "Cases",
+    links: [
+      {
+        'title': 'Geração de Leads B2B',
+        'link': '/'
+      },
+
+      {
+        'title': 'Geração de Leads em Software',
+        'link': '/'
+      },
+      {
+        'title': 'Geração de Leads em Imobiliária',
+        'link': '/'
+      },
+      {
+        'title': 'Cases de Sucesso',
+        'link': '/'
+      },
+    ]
+
+  },
+  {
+    title: "Materiais",
+    links: [
+      {
+        'title': 'Blog',
+        'link': '/'
+      },
+
+      {
+        'title': 'Parcerias com Agências',
+        'link': '/'
+      },
+      {
+        'title': 'Guia Definitivo do Marketing',
+        'link': '/'
+      },
+      {
+        'title': 'Materiais Gratuitos',
+        'link': '/'
+      },
+    ]
+  }
+
+
+]
 
 
 
 export default function Footer() {
-  return (<footer>
+  return (<footer className={style.containerFooter}>
     <div>
       <img src="/img/logo.png" alt="" />
       <p>Transformando visitantes em clientes.</p>
     </div>
 
-    <div>
+    <div className={style.containerAllLinks}>
+      {listaDeLinks.map(lista => (
+        <FooterLinks
+          title={lista.title}
+          namesLink={lista.links}
+        />
+      ))}
+
       <div>
-        <h3>Links Principais</h3>
-        <div>
-          <p>Home</p>
-          <p>Ferramenta</p>
-          <p>Preços</p>
-          <p>Contato</p>
-        </div>
-      </div>
-      <div>
-        <h3>Cases</h3>
-        <div>
-          <p>Geração de Leads B2B</p>
-          <p>Geração de Leads em Software</p>
-          <p>Geração de Leads em Imobiliária</p>
-          <p>Cases de Sucesso</p>
-        </div>
-      </div>
-      <div>
-        <h3>Materias</h3>
-        <div>
-          <p>Blog</p>
-          <p>Parcerias com Agências</p>
-          <p>Guia Definitivo do Marketing</p>
-          <p>Materiais Gratuitos</p>
-        </div>
-      </div>
-      <div>
-        <h3>Siga a Leadster</h3>
-        <div>
+        <h3 className={style.titleLink}>Siga a Leadster</h3>
+        <div className={style.containerLinks}>
           <p>links </p>
           <p></p>
-          <p>Email</p>
-          <p>Telefone</p>
+          <Link href='/'>Email</Link>
+          <Link href='/'>Telefone</Link>
         </div>
       </div>
     </div>

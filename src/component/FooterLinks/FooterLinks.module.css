@@ -1,0 +1,10 @@
+.titleLink {
+  font-weight: 600;
+  padding: 2rem 0;
+}
+
+.containerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}

@@ -1,0 +1,27 @@
+.containerFooter {
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.containerAllLinks {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.containerLinksBox {}
+
+.titleLink {
+  font-weight: 600;
+  padding: 2rem 0;
+}
+
+.containerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
