@@ -1,6 +1,9 @@
 import React from "react"
 import CardVideo from "../CardVideo/CardVideo"
 import ContainerButtons from "../ContainerButtons/ContainerButtons"
+import style from './Main.module.css'
+import CardSec from "../CardSec/CardSec"
+
 
 
 
@@ -8,14 +11,12 @@ import ContainerButtons from "../ContainerButtons/ContainerButtons"
 export default function Main() {
 
 
-  return (<main>
-    <ContainerButtons />
+  return (
+    <main className={style.containerMain}>
+      <ContainerButtons />
 
-    <CardVideo />
-    <CardVideo />
-    <CardVideo />
-    <CardVideo />
+      <CardSec />
 
 
-  </main>)
+    </main>)
 }
