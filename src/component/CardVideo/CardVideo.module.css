@@ -1,0 +1,14 @@
+.containerCard {
+  margin: 1rem;
+  max-width: 362px;
+  box-shadow: 0px 11px 15px -1px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.textCard {
+  font-size: 1rem;
+  padding: 1rem;
+}

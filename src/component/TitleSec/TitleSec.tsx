@@ -1,7 +1,6 @@
 import style from './TitleSec.module.css'
 
 
-
 export default function TitleSec() {
 
 

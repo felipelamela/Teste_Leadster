@@ -17,3 +17,28 @@ body .buttonAtivo:hover {
   cursor: pointer;
   border: solid 1px #0082FF;
 }
+
+body .ativaCard {
+  color: #0081FF;
+
+}
+
+body span.desativado {
+  display: none;
+}
+
+span.ativaCard {
+  text-align: center;
+  right: 0px;
+  z-index: 1;
+  font-size: 3rem;
+  background: #0080ff28;
+  padding: 78px;
+  width: 202px;
+  justify-content: center;
+  align-items: center;
+  display: inline;
+  position: absolute;
+  color: white;
+
+}
