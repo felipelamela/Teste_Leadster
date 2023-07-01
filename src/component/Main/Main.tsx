@@ -1,21 +1,30 @@
+'use client'
 import React from "react"
-import CardVideo from "../CardVideo/CardVideo"
 import ContainerButtons from "../ContainerButtons/ContainerButtons"
 import style from './Main.module.css'
 import CardSec from "../CardSec/CardSec"
+import useFetch from "../useFetch/useFetch"
 
 
 
 
 
 export default function Main() {
+  const [categoriaAtual, setCategoriaAtual] = React.useState<string>('Agências')
+
+  const { data, setCategory } = useFetch(categoriaAtual)
 
 
   return (
     <main className={style.containerMain}>
-      <ContainerButtons />
+      <ContainerButtons
+        setCategory={setCategory}
+      />
 
-      <CardSec />
+      <CardSec
+        Api={data}
+
+      />
 
 
     </main>)

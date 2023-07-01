@@ -1,35 +1,37 @@
 'use client'
-import React, { useEffect } from 'react'
+import React from 'react'
 import ButtonCategory from "../ButtonCategory/ButtonCategory"
+import useFetch from '../useFetch/useFetch'
 
-const listaCategoria:string[] = [
-  "Agências",
-  "Chatbot",
-  "Marketing Digital",
-  "Geração de Leads",
-  "Mídia Paga",
+
+const listaCategoria = [
+  'Agências',
+  'Chatbot',
+  'Marketing Digital',
+  'Geração de Leads',
+  'Mídia Paga',
 ]
 
-const ContainerButtons:React.FC = () => {
-  const [numeroBotao, setNumeroBotao] = React.useState<number>()
+interface Categorias {
+  setCategory: Function
+}
 
-  useEffect(()=>{
-    setNumeroBotao(0)
-  },[])
-
+const ContainerButtons: React.FC<Categorias> = ({ setCategory }) => {
+  const [numeroBotao, setNumeroBotao] = React.useState<number>(0)
 
   return (
     <section>
-      {listaCategoria.map((category:string, index:number) =>(
-        <ButtonCategory 
-          key={index} 
-          name={category}
+      {listaCategoria.map((categoria, index) => (
+        <ButtonCategory
+          key={categoria}
+          name={categoria}
           setNumeroBotao={setNumeroBotao}
           numero={index}
-          estilo={numeroBotao ===index}
-          
-          />
-      ))} 
+          estilo={numeroBotao === index}
+          setCategory={setCategory}
+
+        />
+      ))}
     </section>
   )
 }

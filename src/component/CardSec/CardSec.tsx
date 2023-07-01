@@ -3,9 +3,9 @@ import React from 'react'
 import CardVideo from '../CardVideo/CardVideo'
 import style from './CardSec.module.css'
 import { NextPage } from 'next'
+import { IdRandom } from '../../Funcionais'
 
-interface VideoCard {
-  id: number,
+interface ApiResponse {
   categoria: string,
   titulo: string,
   link: string,
@@ -14,67 +14,59 @@ interface VideoCard {
   thumbnail: string
 }
 
+interface Api {
+  Api: ApiResponse[]
+}
 
-const CardSec: NextPage = () => {
+
+const CardSec: NextPage<Api> = ({ Api }) => {
+
+
   //CardVideos
-  const [videoCard, setVideoCard] = React.useState<VideoCard[]>([])
-  const [boxVideo, setBoxVideo] = React.useState<VideoCard[]>([])
+  const [videoCard, setVideoCard] = React.useState<ApiResponse[]>([])
+
 
   //paginator
   const [pagina, setPagina] = React.useState<number[]>([])
   const [numeroPagina, setNumeroPagina] = React.useState(0)
   const cardPerPagina: number = 9
-  const start = ((numeroPagina - 1) * cardPerPagina)
-  const end = start + cardPerPagina
-
-
-  //fetch da api
-  React.useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/data/videos.json')
-        const data = await response.json();
-        setVideoCard(data)
-        setNumeroPagina(1)
-      } catch (error) {
-        console.error("Erro ao acessar dados do JSON", error)
-      }
-    }
-    fetchData()
-  }, [])
 
 
 
   //Regando numeros paginação
   React.useEffect(() => {
-    const paginaFinal = Math.ceil(videoCard.length / 9)
+    setPagina([])
+    setNumeroPagina(1)
+    const paginaFinal = Math.ceil(Api.length / cardPerPagina)
     for (let index = 1; index <= paginaFinal; index++) {
       setPagina((pagina) => [...pagina, index])
     }
-  }, [videoCard])
+  }, [Api])
 
 
 
   //Videos do Box
   React.useEffect(() => {
-    const boxVideo = videoCard.slice(start, end)
-    setBoxVideo(() => boxVideo)
-  }, [numeroPagina])
+    const start = ((numeroPagina - 1) * cardPerPagina)
+    const end = start + cardPerPagina
+
+    const VideoBox = Api.slice(start, end)
+    setVideoCard(VideoBox)
+    console.log(Api)
+  }, [Api, numeroPagina])
 
 
 
 
-  // Carregando --- Colocar svg rotativo
-  if (videoCard.length === 0) return <>Carregando...</>
 
   return (
     <section >
       <div className={style.containerCards}>
 
-        {boxVideo.map((video, index) => (
+        {videoCard.map((video) => (
           <CardVideo
-            key={index}
-            id={video.id}
+            key={IdRandom()}
+            id={IdRandom()}
             titulo={video.titulo}
             thumbnail={video.thumbnail}
           />
@@ -83,7 +75,7 @@ const CardSec: NextPage = () => {
       </div>
       <div>
         {pagina.map((valor) => (
-          <button onClick={() => setNumeroPagina(valor)} key={valor}>{valor}</button>
+          <button onClick={() => setNumeroPagina(valor)} key={IdRandom()}>{valor}</button>
         ))}
       </div>
 

@@ -5,7 +5,7 @@ import React from 'react'
 import style from './CardVideo.module.css'
 
 interface VideoCard {
-  id: number,
+  id: string,
   titulo: string,
   thumbnail: string
 }

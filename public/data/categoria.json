@@ -1,22 +1,22 @@
 [
   {
-    "id": "0",
+    "id": 0,
     "nome": "Agências"
   },
   {
-    "id": "1",
+    "id": 1,
     "nome": "Chatbot"
   },
   {
-    "id": "2",
+    "id": 2,
     "nome": "Marketing Digital"
   },
   {
-    "id": "3",
+    "id": 3,
     "nome": "Geração de Leads"
   },
   {
-    "id": "4",
+    "id": 4,
     "nome": "Mídia Paga"
   }
 ]
