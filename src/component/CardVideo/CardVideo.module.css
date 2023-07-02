@@ -17,7 +17,7 @@
 @keyframes entrada {
   from {
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(-30px);
   }
 
   to {

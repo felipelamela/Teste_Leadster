@@ -11,14 +11,11 @@ interface Button {
 }
 
 const ButtonCategory: React.FC<Button> = ({ name, setNumeroBotao, numero, estilo, setCategory }) => {
-
-
     function handleClick() {
         setNumeroBotao(numero)
         setCategory(name)
         console.log(name)
     }
-
     return (
         <button
             onClick={handleClick}

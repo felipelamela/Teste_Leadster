@@ -4,6 +4,7 @@ import CardVideo from '../CardVideo/CardVideo'
 import style from './CardSec.module.css'
 import { NextPage } from 'next'
 import { IdRandom } from '../../Funcionais'
+import Modal from '../Modal/Modal'
 
 interface ApiResponse {
   categoria: string,
@@ -58,7 +59,6 @@ const CardSec: NextPage<Api> = ({ Api }) => {
 
 
 
-
   return (
     <section >
       <div className={style.containerCards}>
@@ -66,18 +66,24 @@ const CardSec: NextPage<Api> = ({ Api }) => {
         {videoCard.map((video) => (
           <CardVideo
             key={IdRandom()}
-            id={IdRandom()}
+            categoria={video.categoria}
+            link={video.link}
+            descricao={video.descricao}
             titulo={video.titulo}
             thumbnail={video.thumbnail}
           />
         ))}
 
       </div>
+
+
       <div>
         {pagina.map((valor) => (
           <button onClick={() => setNumeroPagina(valor)} key={IdRandom()}>{valor}</button>
         ))}
       </div>
+
+
 
     </section>
   )
