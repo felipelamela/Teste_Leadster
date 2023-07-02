@@ -17,7 +17,6 @@ const useFetch = (categoriaAtual: string) => {
 
   React.useEffect(() => {
     const fetchData = async () => {
-      console.log(category)
       try {
         setLoading(true);
         const response = await fetch('/data/videos.json');
@@ -32,8 +31,7 @@ const useFetch = (categoriaAtual: string) => {
       }
     };
     fetchData();
-    console.log(data)
-    console.log(data)
+
   }, [category]);
 
   return { data, loading, error, category, setCategory };

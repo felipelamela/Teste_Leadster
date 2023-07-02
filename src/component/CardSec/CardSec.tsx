@@ -4,7 +4,6 @@ import CardVideo from '../CardVideo/CardVideo'
 import style from './CardSec.module.css'
 import { NextPage } from 'next'
 import { IdRandom } from '../../Funcionais'
-import Modal from '../Modal/Modal'
 
 interface ApiResponse {
   categoria: string,
@@ -53,7 +52,6 @@ const CardSec: NextPage<Api> = ({ Api }) => {
 
     const VideoBox = Api.slice(start, end)
     setVideoCard(VideoBox)
-    console.log(Api)
   }, [Api, numeroPagina])
 
 

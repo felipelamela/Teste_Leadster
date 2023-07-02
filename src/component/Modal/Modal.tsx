@@ -1,33 +1,37 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
 
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  categoria: string,
+interface Modal {
   titulo: string,
   link: string,
   descricao: string,
   thumbnail: string
+  open: boolean
+  setOpen: Function
 }
 
 
-interface ApiResponse {
-
-}
 
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, titulo, thumbnail, categoria, link, descricao }) => {
-  if (!isOpen) {
-    return null;
-  }
+
+const Modal: React.FC<Modal> = ({ titulo, link, descricao, thumbnail, open, setOpen }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+
+        console.log('Modal fechado');
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
-    <div className="modal">
+    <div className="modal" ref={modalRef}>
       <div className="modal-content">
-        <button className="close-button" onClick={onClose}>
-          Fechar
-        </button>
-
+        <h1>Meu Modal</h1>
+        <p>Conteúdo do modal...</p>
       </div>
     </div>
   );

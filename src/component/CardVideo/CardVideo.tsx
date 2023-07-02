@@ -17,6 +17,7 @@ interface ApiResponse {
 
 const CardVideo: React.FC<ApiResponse> = ({ titulo, thumbnail, categoria, link, descricao }) => {
   const [ativaCard, setAtivaCard] = React.useState('desativado')
+  const [open, setOpen] = React.useState(false)
 
   function handleMouseEnter() {
     setAtivaCard('ativaCard')
@@ -25,56 +26,39 @@ const CardVideo: React.FC<ApiResponse> = ({ titulo, thumbnail, categoria, link, 
     setAtivaCard('desativado')
   }
 
-
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-
-
-
-
   return (
-    <div
-      className={`${style.containerCard} ${ativaCard}`}
-      onMouseEnter={event => handleMouseEnter()}
-      onMouseLeave={event => handleMouseOut()}
-      onClick={handleOpenModal}
-    >
-      <Image
-        src={thumbnail}
-        alt='decri'
-        width={362}
-        height={204}
-        quality={60}
+    <>
+      <div
+        className={`${style.containerCard} ${ativaCard}`}
+        onMouseEnter={event => handleMouseEnter()}
+        onMouseLeave={event => handleMouseOut()}
+        onClick={event => setOpen(true)}
+      >
+        <Image
+          src={thumbnail}
+          alt='decri'
+          width={362}
+          height={204}
+        />
+        <span className={`${ativaCard}`}>▶</span>
+        <p className={style.textCard}>{titulo}</p>
+
+
+      </div >
+
+      <Modal
+        titulo={titulo}
+        link={link}
+        descricao={descricao}
+        thumbnail={thumbnail}
+        open={open}
+        setOpen={setOpen}
+
 
       />
-      <span className={`${ativaCard}`}>▶</span>
-      <p className={style.textCard}>{titulo}</p>
-
-      <div>
-        <button onClick={handleOpenModal}>Abrir Modal</button>
-
-        <Modal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          categoria={categoria}
-          link={link}
-          descricao={descricao}
-          titulo={titulo}
-          thumbnail={thumbnail}
-        />
 
 
-      </div>
-    </div >
-
+    </>
 
 
 

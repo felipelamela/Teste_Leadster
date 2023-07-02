@@ -14,7 +14,7 @@ const ButtonCategory: React.FC<Button> = ({ name, setNumeroBotao, numero, estilo
     function handleClick() {
         setNumeroBotao(numero)
         setCategory(name)
-        console.log(name)
+
     }
     return (
         <button
