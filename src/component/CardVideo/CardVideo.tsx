@@ -36,6 +36,7 @@ const CardVideo: React.FC<ApiResponse> = ({ titulo, thumbnail, categoria, link, 
           alt='decri'
           width={362}
           height={204}
+         className={style.imgCard}
         />
         <span className={`${ativaCard}`}>▶</span>
         <p className={style.textCard}>{titulo}</p>
@@ -47,7 +48,6 @@ const CardVideo: React.FC<ApiResponse> = ({ titulo, thumbnail, categoria, link, 
         titulo={titulo}
         link={link}
         descricao={descricao}
-        thumbnail={thumbnail}
         open={open}
         setOpen={setOpen}
       />

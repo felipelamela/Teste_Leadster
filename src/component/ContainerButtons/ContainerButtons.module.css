@@ -1,7 +1,8 @@
 .containerButtons {
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
-  padding: 0 0 1rem 0;
+  padding: 0 .2rem 1rem ;
   margin: 0 0 2rem;
   border-bottom: 1px solid rgb(195, 195, 195);
 }
@@ -10,9 +11,25 @@
 .containerSelecao {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-@media (max-width:850px) {
+.titleSelecao{
+  font-weight: 500;
+  padding: 0 10px 3px;
+}
+.boxSelecao{
+border-radius: 10px;
+padding: .3rem;
+}
+.nomeSelecao{
+
+}
+
+
+
+
+@media (max-width:890px) {
   .containerButtons {
     gap: 20px;
     text-align: center;
@@ -21,6 +38,7 @@
   }
   .containerSelecao{
     padding: 0 1rem;
+    align-self: end;
   }
 }
 

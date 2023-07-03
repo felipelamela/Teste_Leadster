@@ -35,9 +35,9 @@ const ContainerButtons: React.FC<Categorias> = ({ setCategory }) => {
       ))}
       </div>
       <div className={style.containerSelecao}>
-        <p>Ordernar por </p>
-        <select name="" id="">
-          <option value="">Data da Publicação</option>
+        <p className={style.titleSelecao}>Ordernar por </p>
+        <select className={style.boxSelecao} name="" id="">
+          <option className={style.nomeSelecao} value="">Data da Publicação</option>
         </select>
       </div>
     </section>

@@ -1,4 +1,4 @@
-.modal{
+.modal {
   position: fixed;
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
@@ -6,40 +6,72 @@
   top: 0;
   left: 0;
   z-index: 100;
+
 }
 
-.containerContent{
+.containerContent {
   background: white;
   position: relative;
-  max-width: 400px;
-  top: 20%;
+  max-width: 500px;
+  top: 6%;
   margin: auto;
+  border-top: 3px solid #1B7FE4;
   border-radius: 12px;
 }
 
-.contentTitle{
-  padding:1rem;
+.contentTitle {
+  margin: 0 auto;
+  justify-self: center;
+  padding: 1rem 2rem;
+  max-width: 300px;
   font-size: 1.2rem;
 }
-.spanTitle{
+
+.spanTitle {
   color: rgb(0, 51, 255);
 }
 
-.titleDescri{
-  padding: 2rem 1rem 1rem;
-
-}
-.titleDescri::after{
-  content: "";
-  position: relative;
-  width: 10px;
-  height: 1px;
-  background: red;
-  z-index: 200;
+.titleDescri {
+  padding: 1rem 0 .6rem;
+  border-bottom: 1px solid rgb(201, 200, 200);
+  margin: 0 1.5rem 1rem;
+  font-weight: 600;
 }
 
-.contentDescri{
-  padding: 0 1rem;
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.contentDescri {
+  padding: 0 1.5rem;
   font-size: 0.9rem;
 
+}
+
+.fecharModal {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 10px;
+  right: 4px;
+  background: white;
+  border: none;
+}
+
+.containerDownload {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 1rem;
+  margin: 0 1.5rem 1rem;
+}
+
+.iconDownload {
+  max-width: 140px;
+  padding: 0 10px 0 0;
+}
+
+@media(max-width:950px){
+.containerContent{
+  top: 0;
+}
 }

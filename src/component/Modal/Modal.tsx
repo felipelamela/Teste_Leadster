@@ -1,16 +1,16 @@
 import { useRef, useEffect } from 'react';
 import style from "./Modal.module.css"
 
+
 interface Modal {
   titulo: string,
   link: string,
   descricao: string,
-  thumbnail: string
   open: boolean
   setOpen: Function
 }
 
-const Modal: React.FC<Modal> = ({ titulo, link, descricao, thumbnail, open, setOpen }) => {
+const Modal: React.FC<Modal> = ({ titulo, link, descricao, open, setOpen }) => {
   if (!open) {
     return null
   }
@@ -27,17 +27,30 @@ const Modal: React.FC<Modal> = ({ titulo, link, descricao, thumbnail, open, setO
     document.addEventListener('mousedown', handleClickOutside);
   }, []);
 
+  function handleClick() {
+    setOpen(false)
+  }
+
+
   return (
     <div className={style.modal} >
       <div className={`${style.containerContent} modal-content`} ref={modalRef}>
+        <button className={style.fecharModal} onClick={handleClick}>✕</button>
         <h3 className={style.contentTitle}><span className={style.spanTitle}>Webinar: </span>{titulo}</h3>
-        <img src={thumbnail} alt="" />
+
+        <video className={style.video} controls>
+          <source src={link} type="video/mp4" />
+          Seu navegador não suporta a reprodução de vídeos.
+        </video>
+
+
         <p className={style.titleDescri}>Descrição</p>
         <p className={style.contentDescri}>{descricao}</p>
-        <div>
-          <img src="/img/Downloads/Spreadsheet.png" alt="" />
-          <img src="/img/Downloads/Doc.png" alt="" />
-          <img src="/img/Downloads/presentation.png" alt="" />
+        <p className={style.titleDescri}>Downloads</p>
+        <div className={style.containerDownload}>
+          <img className={style.iconDownload} src="/img/Downloads/Spreadsheet.png" alt="" />
+          <img className={style.iconDownload} src="/img/Downloads/Doc.png" alt="" />
+          <img className={style.iconDownload} src="/img/Downloads/presentation.png" alt="" />
 
         </div>
       </div>

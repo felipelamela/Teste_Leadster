@@ -108,16 +108,16 @@ export default function Footer() {
             <span className={style.boxImg}><img className={style.icon} src="/img/iconLinks/facebook.svg" alt="" /></span>
             <span className={style.boxImg}><img className={style.icon} src="/img/iconLinks/instagram.svg" alt="" /></span>
           </div>
-          <Link className={style.contato} href='/'>Email: <span>contato@leadster.com.br</span></Link>
-          <Link className={style.contato} href='/'>Telefone: <span>(42) 98828-9851</span></Link>
+          <p className={style.contato} >Email: <span>contato@leadster.com.br</span></p>
+          <p className={style.contato} >Telefone: <span>(42) 98828-9851</span></p>
         </div>
       </div>
     </div>
 
 
     <div className={style.containerCopy}>
-      <p className={style.copyfooter}>Copyright© 2015 - 2022 Todos os direitos reservados | Leadster </p>
-      <p className={style.copyfooter}>Rua Jpsé Loureiro, 464 - Centro - Curitiba PR - CEP: 80010-000 | Termos de uso</p>
+      <p className={style.copyfooter}>Copyright© 2015 - 2022 Todos os direitos reservados | <span className={style.detalheFooter}>Leadster</span> </p>
+      <p className={style.copyfooter}>Rua José Loureiro, 464 - Centro - Curitiba PR - CEP: 80010-000 | Termos de uso</p>
     </div>
   </footer>)
 }
