@@ -19,7 +19,7 @@ const DescriSec = () => {
             <img src="img/no-card-dark.webp" alt="" />
             <p><strong>Não</strong> é necessário Cartão de Crédito</p>
           </div>
-          <span>|</span>
+          <span className={style.spanDescri}>|</span>
           <div className={style.detalheDescri}>
             <img src="img/rating.webp" alt="" />
             <p>4.9/5 média de satifação</p>
