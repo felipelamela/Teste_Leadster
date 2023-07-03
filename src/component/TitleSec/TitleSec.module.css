@@ -3,6 +3,7 @@
   margin: 0 auto;
   text-align: center;
   background: #F0F8FF;
+  box-sizing: border-box;
 }
 
 .textTitle {
@@ -34,4 +35,20 @@
   color: transparent;
   font-weight: 600;
   line-height: 1;
+}
+
+@media (max-width:415px) {
+.containerTitle{
+  padding:4rem 0;
+}
+.textTitle{
+  padding: .4rem .8rem;
+  font-size: .7rem;
+}
+.titleSec{
+  font-size: 1.4rem;
+}
+.titleSec span{
+  font-size: 3rem;
+}
 }

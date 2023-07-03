@@ -30,3 +30,11 @@
   text-align: start;
   cursor: pointer;
 }
+
+@media (max-width:415px){
+.containerPaginator{
+  display: flex;
+  flex-direction: column;
+}
+
+}

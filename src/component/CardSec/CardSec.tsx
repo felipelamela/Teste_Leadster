@@ -2,7 +2,6 @@
 import React from 'react'
 import CardVideo from '../CardVideo/CardVideo'
 import style from './CardSec.module.css'
-import { NextPage } from 'next'
 import { IdRandom } from '../../Funcionais'
 
 interface ApiResponse {
@@ -18,7 +17,7 @@ interface Api {
 }
 
 
-const CardSec: NextPage<Api> = ({ Api }) => {
+const CardSec: React.FC<Api> = ({ Api }) => {
 
 
   //CardVideos
@@ -28,7 +27,17 @@ const CardSec: NextPage<Api> = ({ Api }) => {
   //paginator
   const [pagina, setPagina] = React.useState<number[]>([])
   const [numeroPagina, setNumeroPagina] = React.useState(0)
-  const cardPerPagina: number = 9
+  const [cardPerPagina, setCardPerPagina] = React.useState<number>(9)
+
+
+
+  //modificador de quantidade de cards na tela
+  React.useEffect(() => {
+    const userAgent = window.navigator.userAgent
+    if (/iPhone|Android|webOS|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(userAgent)){
+      setCardPerPagina(4)
+    }
+  }, [])
 
 
   //Gegando numeros paginação
@@ -84,11 +93,11 @@ const CardSec: NextPage<Api> = ({ Api }) => {
         <p className={style.paginator}>Página</p>
         <div>
           {pagina.map((valor) => (
-            <button 
-              className={`${style.buttonPaginator} ${valor === numeroPagina ? "paginaAtiva": ``}`} 
-              onClick={event => paginator(event)} 
+            <button
+              className={`${style.buttonPaginator} ${valor === numeroPagina ? "paginaAtiva" : ``}`}
+              onClick={event => paginator(event)}
               key={IdRandom()}>
-                {valor}
+              {valor}
             </button>
           ))}
         </div>

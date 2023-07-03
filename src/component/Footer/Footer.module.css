@@ -1,28 +1,102 @@
 .containerFooter {
+  max-width: 1200px;
   margin: 0 auto;
   justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: center;
-  padding:  4rem 0 0;
+  padding: 4rem 0 0;
 }
-
 .containerAllLinks {
   display: flex;
   gap: 3rem;
+  padding: 0 0 4rem;
   justify-content: space-between;
+  border-bottom: 1px solid rgb(210, 210, 210);
 }
 
-.containerLinksBox {}
+.titleFooterContainer {
+  align-self: center;
+}
+
+.paragrafoFooter {
+  font-size: .7rem;
+  padding: .3rem 0;
+}
 
 .titleLink {
   font-weight: 600;
-  padding: 2rem 0;
+  padding: 1.7rem 0;
 }
-
 .containerLinks {
   display: flex;
   flex-direction: column;
   gap: .8rem;
+}
+.containerCopy {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 2rem;
+  text-align: start;
+  box-sizing: border-box;
+}
+
+.copyfooter {
+  display: inline-block;
+  font-size: .6rem;
+}
+
+.boxImg {
+  display: inline-block;
+  background: #F7F8FB;
+  margin: 0 10px 10px 0;
+  padding: .6rem .65rem;
+  border-radius: 50%;
+}
+
+.icon {
+  max-width: 15px;
+}
+
+
+.contato {
+  font-size: .9rem;
+  font-weight: 300;
+  color: #707070;
+  text-decoration: none;
+}
+
+.contato span {
+  color: #b3b3b3;
+}
+
+@media(max-width:950px) {
+  .containerAllLinks {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    justify-content: center;
+  }
+}
+@media(max-width:680px) {
+  .containerAllLinks {
+    grid-template-columns: 200px 250px;
+  }
+}
+
+
+
+@media(max-width: 510px) {
+  .containerAllLinks {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem 3rem;
+  }
+
+  .containerCopy {
+    flex-direction: column;
+    gap: 12px;
+    padding: 1rem 1rem 2rem;
+  }
+
+
 }

@@ -8,3 +8,10 @@
   flex-direction: column;
   gap: .8rem;
 }
+
+.linkFooter{
+  font-size: .9rem;
+  color: #b3b3b3;
+  font-weight: 300;
+  text-decoration: none;
+}

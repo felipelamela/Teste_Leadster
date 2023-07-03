@@ -21,7 +21,7 @@ const ContainerButtons: React.FC<Categorias> = ({ setCategory }) => {
 
   return (
     <section className={style.containerButtons}>
-      <div>
+      <div className={style.containerButtonDiv}>
       {listaCategoria.map((categoria, index) => (
         <ButtonCategory
           key={categoria}

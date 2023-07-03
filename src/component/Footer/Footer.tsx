@@ -15,7 +15,7 @@ interface objLink {
 
 const listaDeLinks: objLink[] = [
   {
-    title: "Home",
+    title: "Links Principais",
     links: [{
       'title': 'Home',
       'link': '/'
@@ -87,9 +87,9 @@ const listaDeLinks: objLink[] = [
 
 export default function Footer() {
   return (<footer className={style.containerFooter}>
-    <div>
+    <div className={style.titleFooterContainer}>
       <img src="/img/logo.png" alt="" />
-      <p>Transformando visitantes em clientes.</p>
+      <p className={style.paragrafoFooter}>Transformando visitantes em clientes.</p>
     </div>
 
     <div className={style.containerAllLinks}>
@@ -103,19 +103,21 @@ export default function Footer() {
       <div>
         <h3 className={style.titleLink}>Siga a Leadster</h3>
         <div className={style.containerLinks}>
-          <p>links </p>
-          <p></p>
-          <Link href='/'>Email</Link>
-          <Link href='/'>Telefone</Link>
+          <div className={style.containerIcon}>
+            <span className={style.boxImg}><img className={style.icon} src="/img/iconLinks/linkedin.svg" alt="" /></span>
+            <span className={style.boxImg}><img className={style.icon} src="/img/iconLinks/facebook.svg" alt="" /></span>
+            <span className={style.boxImg}><img className={style.icon} src="/img/iconLinks/instagram.svg" alt="" /></span>
+          </div>
+          <Link className={style.contato} href='/'>Email: <span>contato@leadster.com.br</span></Link>
+          <Link className={style.contato} href='/'>Telefone: <span>(42) 98828-9851</span></Link>
         </div>
       </div>
     </div>
 
 
-    <div>
-      <p>Copyright</p>
-      <p>local</p>
-
+    <div className={style.containerCopy}>
+      <p className={style.copyfooter}>Copyright© 2015 - 2022 Todos os direitos reservados | Leadster </p>
+      <p className={style.copyfooter}>Rua Jpsé Loureiro, 464 - Centro - Curitiba PR - CEP: 80010-000 | Termos de uso</p>
     </div>
   </footer>)
 }

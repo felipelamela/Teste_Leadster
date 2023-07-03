@@ -1,4 +1,4 @@
-.containerButtons{
+.containerButtons {
   display: flex;
   justify-content: space-between;
   padding: 0 0 1rem 0;
@@ -6,12 +6,21 @@
   border-bottom: 1px solid rgb(195, 195, 195);
 }
 
-.containerButtons::before{
-  contain: "";
 
-}
-
-.containerSelecao{
+.containerSelecao {
   display: flex;
   align-items: center;
 }
+
+@media (max-width:850px) {
+  .containerButtons {
+    gap: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .containerSelecao{
+    padding: 0 1rem;
+  }
+}
+
