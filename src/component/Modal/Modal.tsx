@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import style from "./Modal.module.css"
 
 interface Modal {
   titulo: string,
@@ -9,18 +10,17 @@ interface Modal {
   setOpen: Function
 }
 
-
-
-
-
 const Modal: React.FC<Modal> = ({ titulo, link, descricao, thumbnail, open, setOpen }) => {
-  const modalRef = useRef<HTMLDivElement>(null);
+  if (!open) {
+    return null
+  }
+
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-
-        console.log('Modal fechado');
+        setOpen(false)
       }
     };
 
@@ -28,10 +28,18 @@ const Modal: React.FC<Modal> = ({ titulo, link, descricao, thumbnail, open, setO
   }, []);
 
   return (
-    <div className="modal" ref={modalRef}>
-      <div className="modal-content">
-        <h1>Meu Modal</h1>
-        <p>Conteúdo do modal...</p>
+    <div className={style.modal} >
+      <div className={`${style.containerContent} modal-content`} ref={modalRef}>
+        <h3 className={style.contentTitle}><span className={style.spanTitle}>Webinar: </span>{titulo}</h3>
+        <img src={thumbnail} alt="" />
+        <p className={style.titleDescri}>Descrição</p>
+        <p className={style.contentDescri}>{descricao}</p>
+        <div>
+          <img src="/img/Downloads/Spreadsheet.png" alt="" />
+          <img src="/img/Downloads/Doc.png" alt="" />
+          <img src="/img/Downloads/presentation.png" alt="" />
+
+        </div>
       </div>
     </div>
   );

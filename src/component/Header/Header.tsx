@@ -1,4 +1,6 @@
+import style from "./Header.module.css"
+
 export default function Header() {
 
-  return <header>Olá mundo</header>
+  return <img className={style.headerImg} src="img/logo.png" alt="" />
 }

@@ -10,9 +10,10 @@ import useFetch from "../useFetch/useFetch"
 export default function Main() {
   const [categoriaAtual, setCategoriaAtual] = React.useState<string>('Agências')
 
+  const [paginaAtual, setPaginaAtual] = React.useState<number>(1)
+
+
   const { data, setCategory } = useFetch(categoriaAtual)
-
-
 
   return (
     <main className={style.containerMain}>

@@ -13,7 +13,6 @@ interface ApiResponse {
   data: string,
   thumbnail: string
 }
-
 interface Api {
   Api: ApiResponse[]
 }
@@ -32,8 +31,7 @@ const CardSec: NextPage<Api> = ({ Api }) => {
   const cardPerPagina: number = 9
 
 
-
-  //Regando numeros paginação
+  //Gegando numeros paginação
   React.useEffect(() => {
     setPagina([])
     setNumeroPagina(1)
@@ -55,7 +53,14 @@ const CardSec: NextPage<Api> = ({ Api }) => {
   }, [Api, numeroPagina])
 
 
-
+  //Paginação
+  const paginator = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const target = event.target as HTMLButtonElement
+    if (target instanceof HTMLButtonElement) {
+      const innerText = Number(target.innerText);
+      setNumeroPagina(innerText)
+    }
+  }
 
   return (
     <section >
@@ -75,10 +80,18 @@ const CardSec: NextPage<Api> = ({ Api }) => {
       </div>
 
 
-      <div>
-        {pagina.map((valor) => (
-          <button onClick={() => setNumeroPagina(valor)} key={IdRandom()}>{valor}</button>
-        ))}
+      <div className={style.containerPaginator}>
+        <p className={style.paginator}>Página</p>
+        <div>
+          {pagina.map((valor) => (
+            <button 
+              className={`${style.buttonPaginator} ${valor === numeroPagina ? "paginaAtiva": ``}`} 
+              onClick={event => paginator(event)} 
+              key={IdRandom()}>
+                {valor}
+            </button>
+          ))}
+        </div>
       </div>
 
 

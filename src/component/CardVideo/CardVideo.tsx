@@ -12,9 +12,6 @@ interface ApiResponse {
   descricao: string,
   thumbnail: string
 }
-
-
-
 const CardVideo: React.FC<ApiResponse> = ({ titulo, thumbnail, categoria, link, descricao }) => {
   const [ativaCard, setAtivaCard] = React.useState('desativado')
   const [open, setOpen] = React.useState(false)
@@ -53,15 +50,8 @@ const CardVideo: React.FC<ApiResponse> = ({ titulo, thumbnail, categoria, link, 
         thumbnail={thumbnail}
         open={open}
         setOpen={setOpen}
-
-
       />
-
-
     </>
-
-
-
   )
 }
 

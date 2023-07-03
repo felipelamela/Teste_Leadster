@@ -3,8 +3,5 @@
   flex-direction: column;
   margin: 0 auto;
   max-width: 1200px;
-}
-
-.containerCards:nth-child(odd) {
-  border-radius: 50%;
+  padding: 4rem 0;
 }
