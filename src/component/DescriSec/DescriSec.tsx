@@ -1,10 +1,16 @@
 import React from 'react'
 import style from "./DescriSec.module.css"
+import Image from 'next/image';
 
 const DescriSec = () => {
   return (
     <section className={style.containerDescri}>
-      <img className={style.imgDescri} src='img/comparativo_img_CTA.png' alt="" />
+      <Image
+        className={style.imgDescri}
+        width={600}
+        height={600}
+        layout="responsive"
+        src='/img/comparativo_img_CTA.png' alt="" />
       <div className={style.containerTextDescri}>
         <div className={style.TextDecri}>
           <h3 className={style.titleDescri}>Pronto para triplicar sua <strong>Geração de Leads?</strong></h3>
@@ -12,7 +18,13 @@ const DescriSec = () => {
         </div>
         <div className={style.containerButton}>
           <button className={style.buttonDescri}>Ver Demonstração</button>
-          <img className={style.seloButtonDescri} src="img/selo_RD.png" alt="" />
+          <Image 
+            className={style.seloButtonDescri} 
+            src="/img/selo_RD.png" 
+            width={200}
+            height={100}
+            layout="responsive"
+            alt="" />
         </div>
         <div className={style.containerDetalheDescri}>
           <div className={style.detalheDescri}>

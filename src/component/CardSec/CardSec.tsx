@@ -48,7 +48,7 @@ const CardSec: React.FC<Api> = ({ Api }) => {
     for (let index = 1; index <= paginaFinal; index++) {
       setPagina((pagina) => [...pagina, index])
     }
-  }, [Api])
+  }, [Api, cardPerPagina])
 
 
 
@@ -59,7 +59,7 @@ const CardSec: React.FC<Api> = ({ Api }) => {
 
     const VideoBox = Api.slice(start, end)
     setVideoCard(VideoBox)
-  }, [Api, numeroPagina])
+  }, [Api, numeroPagina, cardPerPagina])
 
 
   //Paginação
