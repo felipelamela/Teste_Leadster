@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import style from './FooterLinks.module.css'
+import { IdRandom } from '@/Funcionais'
 
 interface objetoLink {
   title: string
@@ -18,7 +19,7 @@ const FooterLinks: React.FC<Footer> = ({ title, namesLink }) => {
       <h4 className={style.titleLink}>{title}</h4>
       <div className={style.containerLinks}>
         {namesLink.map((nameL, index) => (
-          <Link className={style.linkFooter} key={index} href={nameL.title}>{nameL.title}</Link>
+          <a className={style.linkFooter} key={IdRandom()} href="/">{nameL.title}</a>
         ))}
 
       </div>

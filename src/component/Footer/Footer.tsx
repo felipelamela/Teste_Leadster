@@ -1,5 +1,5 @@
-import Link from "next/link"
 import FooterLinks from "../FooterLinks/FooterLinks"
+import { IdRandom } from "@/Funcionais"
 import style from "./Footer.module.css"
 
 interface objetoLink {
@@ -93,15 +93,19 @@ export default function Footer() {
     </div>
 
     <div className={style.containerAllLinks}>
+
+
       {listaDeLinks.map(lista => (
         <FooterLinks
+          key={IdRandom()}
           title={lista.title}
           namesLink={lista.links}
         />
       ))}
 
+
       <div>
-        <h3 className={style.titleLink}>Siga a Leadster</h3>
+        <h4 className={style.titleLink}>Siga a Leadster</h4>
         <div className={style.containerLinks}>
           <div className={style.containerIcon}>
             <span className={style.boxImg}><img className={style.icon} src="/img/iconLinks/linkedin.svg" alt="" /></span>
@@ -121,3 +125,9 @@ export default function Footer() {
     </div>
   </footer>)
 }
+
+
+/*
+
+
+*/
